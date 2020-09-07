@@ -2,6 +2,7 @@ const Doctor = require('../../../models/doctor');
 
 const jwt = require('jsonwebtoken');
 
+// Action for registering a new doctor
 module.exports.register = async function(req, res)
 {
     try
@@ -35,6 +36,7 @@ module.exports.register = async function(req, res)
     }
 }
 
+//Action for logging in a registered doctor
 module.exports.login = async function(req,res)
 {
      try
@@ -51,7 +53,7 @@ module.exports.login = async function(req,res)
          return res.json(200,{
              message: 'Sign In Successful. Here is your token. Please keep it safe!',
              data : {
-                 token: jwt.sign(doctor.toJSON(), 'hospitalAPI', {expiresIn: '10000000'})
+                 token: jwt.sign(doctor.toJSON(), 'hospitalAPI_secret', {expiresIn: '100000'})
              }
          });
 

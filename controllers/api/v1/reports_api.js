@@ -1,5 +1,6 @@
 const Report = require('../../../models/report');
 
+//Action for fetching reports with specified status
 module.exports.status = async function(req,res){
 
     try

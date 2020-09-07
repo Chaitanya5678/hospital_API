@@ -1,6 +1,7 @@
 const Patient = require('../../../models/patient');
 const Report = require('../../../models/report');
 
+//Action for registering a new patient
 module.exports.register = async function(req, res)
 {
     try
@@ -32,6 +33,7 @@ module.exports.register = async function(req, res)
     }
 }
 
+//Action for creating a new report for patient
 module.exports.createReport = async function(req,res){
 
     try
@@ -45,13 +47,13 @@ module.exports.createReport = async function(req,res){
             });
         }
 
-        // need modifications
         let report = await Report.create({
             createdByDoctor: req.body.username,
             patient: patient,
             status: req.body.status
         });
 
+        // Add newly created report to that particular patient
         patient.reports.push(report);
         patient.save();
 
@@ -68,6 +70,7 @@ module.exports.createReport = async function(req,res){
     }
 }
 
+//Action for fetching all reports of a specified patient
 module.exports.allReports = async function(req,res){
 
     try
