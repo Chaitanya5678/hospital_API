@@ -15,4 +15,4 @@ An API for the doctors of a hospital which looks after diagnosis and treatment o
 6. This would start the server and a 'Server is Up and running' message would appear
 7. You are now free to access the api using `postman` which can also be easily installed
 
-**Note:** *For more detailed project demonstration, do checkout [This link](www.youtube.com)*
+**Note:** *For more detailed project demonstration, do checkout [my video demonstration](https://youtu.be/CbBBAnA283g)*
